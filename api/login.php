@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   $result = mysqli_fetch_array(mysqli_query($con, $cek));
 
   if (isset($result)) {
-    $response['value'] = 200;
+    $response['status'] = 200;
     $response['message'] = "Login Berhasil";
     echo json_encode($response);
   } else {
-    $response['value'] = 400;
+    $response['status'] = 400;
     $response['message'] = "Username atau Password SALAH";
     echo json_encode($response);
   }
